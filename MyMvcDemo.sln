@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMvcDemo", "MyMvcDemo\MyMvcDemo.csproj", "{493DEC3D-F68D-47FE-87D6-DEDF82F7A4BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{5F3DF680-0568-4982-BAAB-EE9FA60E11CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{493DEC3D-F68D-47FE-87D6-DEDF82F7A4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{493DEC3D-F68D-47FE-87D6-DEDF82F7A4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{493DEC3D-F68D-47FE-87D6-DEDF82F7A4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3DF680-0568-4982-BAAB-EE9FA60E11CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3DF680-0568-4982-BAAB-EE9FA60E11CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3DF680-0568-4982-BAAB-EE9FA60E11CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3DF680-0568-4982-BAAB-EE9FA60E11CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8280760A-EB1F-465B-B6A9-38227674F6C9}
 	EndGlobalSection
 EndGlobal
