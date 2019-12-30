@@ -32,6 +32,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
+using WpfApp1.Directory;
+using WpfApp1.Directory.Data;
 
 namespace WpfApp1
 {
@@ -46,21 +48,32 @@ namespace WpfApp1
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             //return new object();
-            var path = (string)value;
-            if (path ==null)
-            {
-                return null;
-            }
-            var name = WpfTreeView.GetFileFolderName(path);
+            //var path = (string)value;
+            //if (path ==null)
+            //{
+            //    return null;
+            //}
+            //var name = DirectoryStructure.GetFileFolderName(path);
+            //var image = "Images/driver.jpg";
+            //if (string.IsNullOrEmpty(name))
+            //{
+            //    image = "Images/f1.jpg";
+            //}
             var image = "Images/driver.jpg";
-            if (string.IsNullOrEmpty(name))
+            switch ((DirectoryItemType)value)
             {
-                image = "Images/f1.jpg";
+                case DirectoryItemType.Drive:
+                    image = "Images/f1.jpg";
+                    break;
+                case DirectoryItemType.File:
+                    image = "Images/f2.jpg";
+                    break;
+                   
             }
-            else if(new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
-            {
-                image = "Images/f2.jpg";
-            }
+            //else if(new FileInfo(path).Attributes.HasFlag(FileAttributes.Directory))
+            //{
+            //    image = "Images/f2.jpg";
+            //}
            
             return new BitmapImage(new Uri($"pack://application:,,,/{image}"));
         }
