@@ -1,0 +1,67 @@
+﻿<Page x:Class="深入浅出WPF学习.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:深入浅出WPF学习"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Page1">
+    <Page.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Border Padding="10">
+        <StackPanel>
+            <TextBox x:Name="UserText1" Height="30" FontSize="24" Margin="10 10 " >中国</TextBox>
+            <TextBox Height="30" Margin="10 10" Style="{DynamicResource TextBoxStyle1}"/>
+            <Button Height="50" Width="100" FontSize="30" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1.95" ScaleX="-1.2"/>
+                        <SkewTransform AngleY="30" AngleX="30"/>
+                        <RotateTransform Angle="88"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform> 按钮
+            </Button>
+            <Path Data="M13.97541,143.38115" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="13.975,0,0,0" Stretch="Fill" Stroke="Black" Width="1"/>
+            <Path Data="M13.97541,183.95492 C13.97541,183.95492 539.70533,464.7705 184.37746,384.85247" Fill="#FFB6C8DF" HorizontalAlignment="Center" Height="186.703" Margin="13.975,0,0,0" Stretch="Fill" Width="334.035" OpacityMask="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" RenderTransformOrigin="0.8,0.8">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" ScaleX="1"/>
+                        <SkewTransform AngleY="0" AngleX="0"/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform X="30" Y="25"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Stroke>
+                    <ImageBrush/>
+                </Path.Stroke>
+            </Path>
+            <Button/>
+        </StackPanel>
+    </Border>
+</Page>
